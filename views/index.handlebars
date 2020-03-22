@@ -1,0 +1,47 @@
+<div>
+    <div>
+        <h1>Let's eat some burgers!</h1>
+    </div>
+    <div>
+        <h2>Enter your favorite burgers: </h2>
+    </div>
+</div>
+{{!-- make new burgers --}}
+<div>
+    <form class="create-form">
+        <div class="form-group">
+            <textarea class="form-control" name="burger" id="newBurger" cols="30"></textarea>
+
+        </div>
+        <button class="btn btn-success" type="submit">Add burger!</button>
+    </form>
+</div>
+
+{{!-- entered burgers --}}
+
+<div>
+    <h2>Burgers to devour: </h2>
+    <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+
+        <li>
+            <p>{{id}} . {{name}}</p>
+
+            <button class="btn btn-success devour" data-id="{{id}}" data-devoured="true">
+                DEVOUR!
+            </button>
+        </li>
+        {{/unless}}
+        {{/each}}
+    </ul>
+
+    <h2>Burgers already devoured</h2>
+    <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+            <li> {{id}}.{{name}}</li>
+        {{/if}}
+        {{/each}}
+    </ul>
+</div>
