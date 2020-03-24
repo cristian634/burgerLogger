@@ -17,13 +17,13 @@ function objToSql(ob) {
 };
 
 var orm = {
-    selectAll: function (tableInput, cd){
+    selectAll: function (tableInput, cb){
         var queryString = "SELECT * FROM " + tableInput + ";";
         connection.query(queryString, function(err, result){
             if (err) {
                 throw err;
             }
-            cd(result);
+            cb(result);
         });
     },
     create: function(table, cols, vals, cb){
@@ -32,9 +32,8 @@ var orm = {
         console.log("create: " + queryString);
 
         connection.query(queryString, vals, function(err, result){
-            if(err){
-                throw err;
-            }
+            if(err) throw err;
+            
             cb(result);
         });
     },
@@ -45,9 +44,7 @@ var orm = {
         console.log("update: " + queryString); 
 
         connection.query(queryString, function( err, result){
-            if (err){
-                throw err;
-            }
+            if (err) throw err;
             cb(result);
         });
     }

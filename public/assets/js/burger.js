@@ -1,7 +1,7 @@
-
+console.log("Script Loaded");
 $(function(){
-    console.log("Script Loaded");
-    $(".create-form").on("submit", (event)=>{
+  
+    $(".subButton").on("submit", function(event){
         event.preventDefault();
         
         var newBurger = {
@@ -18,7 +18,7 @@ $(function(){
         });
     });
 
-    $(".devour").on("click", (event) => {
+    $(".devour").on("click", function(event){
         var id = $(this).data("id");
         console.log(id + " clicked");
         var changeDevour = $(this).data(devoured);
