@@ -8,7 +8,7 @@
 </div>
 {{!-- make new burgers --}}
 <div>
-    <form class="create-form">
+    <form class="create-form" id="submitArea">
         <div class="form-group">
             <textarea class="form-control" name="burger" id="newBurger" cols="30"></textarea>
 
@@ -28,7 +28,7 @@
         <li>
             <p>{{id}} . {{name}}</p>
 
-            <button class="btn btn-success devour" data-id="{{id}}" data-devoured="true">
+            <button class="btn btn-success devour" data-id="{{id}}" data-devouring="true">
                 DEVOUR!
             </button>
         </li>
@@ -37,7 +37,7 @@
     </ul>
 
     <h2>Burgers already devoured</h2>
-    <ul>
+    <ul>    
         {{#each burgers}}
         {{#if devoured}}
             <li> {{id}}.{{name}}</li>
