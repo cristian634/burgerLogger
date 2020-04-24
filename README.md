@@ -1,0 +1,1 @@
+This app will create burgers to be eaten and store them in an SQL database. Once a user hits the "Devour" button, it will move the item into a new list of already devoured burgers by setting a boolean in the DB to true.
